@@ -1,0 +1,1 @@
+This Rails app was created with help from [Centresource's](http://www.centresource.com/ "Centresource") Trail Mix Project

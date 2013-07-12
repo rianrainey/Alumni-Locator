@@ -1,0 +1,19 @@
+development:
+    adapter: postgresql
+    database: alumni-locator_development
+    username:
+    password:
+    host: localhost
+
+test:
+    adapter: postgresql
+    database: alumni-locator_test
+    username:
+    password:
+    host: localhost
+
+production:
+    adapter: postgresql
+    database: alumni-locator_production
+    username:
+    password:
