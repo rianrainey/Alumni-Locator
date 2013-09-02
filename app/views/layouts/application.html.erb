@@ -8,8 +8,17 @@
 </head>
 <body>
 
-  <%= render 'shared/flash' %>
-<%= yield %>
+  <div class="wrap-header">
+  </div>
+
+  <div class="wrap-content">
+    <%= render 'shared/flash' %>
+    <%= yield %>
+  </div>
+
+  <footer>
+    <%= yield :scripts %>
+  </footer>
 
 </body>
 </html>

@@ -1,0 +1,9 @@
+.wrap-content {
+  @include outer-container();
+  .member-list {
+    @include span-columns(4 of 12);
+  }
+  .member-locations {
+    @include span-columns(8 of 12);
+  }
+}

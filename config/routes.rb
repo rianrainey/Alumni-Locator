@@ -1,7 +1,8 @@
 AlumniLocator::Application.routes.draw do
   devise_for :users
 
-  root :to => 'users#index'
+  get 'map', to: 'users#index', as: 'users'
+  root to: redirect('/map')
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
