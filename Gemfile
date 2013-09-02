@@ -21,6 +21,7 @@ end
 
 group :production do
   gem "heroku_rails_deflate"
+  gem "lograge"
 end
 
 group :development do
