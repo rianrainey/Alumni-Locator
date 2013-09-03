@@ -7,27 +7,18 @@
     </p>
   <% end %>
 
-  <ul>
     <% @users.each do |user| %>
-      <li>
-        <%= user.email %>
-          <% if user.contact_info.present? %>
+      <% if user.contact_info.present? %>
         <ul>
-          <li><%= user.contact_info.first_name unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.last_name unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.home_address unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.home_address_2 unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.home_city unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.home_state unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.home_zip_code unless user.contact_info.first_name.blank? %></li>
-          <li><%= user.contact_info.latitude %></li>
-          <li><%= user.contact_info.longitude %></li>
+          <%= user.contact_info.first_name + " " + user.contact_info.last_name unless user.contact_info.first_name.blank? %>
+          <ul>
+            <li><%= user.contact_info.home_city unless user.contact_info.home_city.blank? %></li>
+            <li><%= user.contact_info.home_state unless user.contact_info.home_state.blank? %></li>
+          </ul>
         </ul>
       <% end %>
 
-      </li>
     <% end %>
-  </ul>
 </div>
 
 <div class="member-locations">

@@ -1,1 +1,4 @@
-This Rails app was created with help from [Centresource's](http://www.centresource.com/ "Centresource") Trail Mix Project
+# Niswonger Alumni Locator
+
+This application stores and displays Niswonger Scholar's most recently
+saved location.

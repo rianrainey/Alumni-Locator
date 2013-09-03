@@ -9,6 +9,7 @@ gem 'activeadmin'
 gem 'bourbon'
 gem 'neat'
 gem 'chosen-rails'
+gem 'rails_config'
 
 gem 'geocoder'
 gem 'gmaps4rails'
@@ -49,6 +50,7 @@ group :test do
   gem "spork-rails"
   gem "database_cleaner"
   gem "shoulda-matchers"
+  gem "capybara"
   gem "capybara-webkit"
   gem "launchy"
   gem "fuubar"

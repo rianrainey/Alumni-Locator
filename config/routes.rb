@@ -1,6 +1,12 @@
 AlumniLocator::Application.routes.draw do
   devise_for :users
 
+  resources :users do
+    collection do
+      post 'store_password'
+      get 'login'
+    end
+  end
   get 'map', to: 'users#index', as: 'users'
   root to: redirect('/map')
 

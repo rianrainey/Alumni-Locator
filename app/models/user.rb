@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :contact_info
 
-  after_create { |user| user.send_reset_password_instructions }
+  #after_create { |user| user.send_reset_password_instructions }
   
   def password_required?
     new_record? ? false : super

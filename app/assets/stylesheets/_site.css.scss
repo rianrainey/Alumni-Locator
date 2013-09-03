@@ -1,3 +1,8 @@
+body {
+  background: url('grey_wash_wall.png');
+  color: #FFF;
+}
+
 .wrap-content {
   @include outer-container();
   .member-list {

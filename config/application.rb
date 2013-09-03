@@ -62,5 +62,17 @@ module AlumniLocator
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    config.assets.precompile += %w(
+      screen.css
+      ckeditor/init.js
+      ckeditor/config.js
+      modernizr.js
+      ie8.js
+      .eot
+      .woff
+      .ttf
+    )
   end
 end
