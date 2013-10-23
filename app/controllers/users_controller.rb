@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_password
+  before_filter :authenticate
 
   def index
     if params[:search].present?
@@ -19,14 +19,17 @@ class UsersController < ApplicationController
 
   end
 
-  def login
-    
-  end
-
-  private
-  def require_password
-    unless session[:password] == Settings.app_defaults.password
-      flash[:error] = Settings.app_defaults.error_not_authorized
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "scott" && password == "niswonger"
     end
   end
+
+  #private
+  #def require_password
+  #
+    #unless session[:password] == Settings.app_defaults.password
+      #flash[:error] = Settings.app_defaults.error_not_authorized
+    #end
+  #end
 end
