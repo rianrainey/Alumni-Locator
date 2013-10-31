@@ -1,6 +1,6 @@
 <h2><%= "#{contact.first_name} #{contact.last_name}" %></h2>
 <%= contact.home_address %>
-<%= contact.home_address_2 %>
-<%= contact.home_city %>
+<%= "<br/>".html_safe + contact.home_address_2 if contact.home_address_2.present? %>
+<%= "<br/>".html_safe + contact.home_city %>
 <%= contact.home_state %>
 

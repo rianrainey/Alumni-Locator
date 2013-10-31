@@ -32,7 +32,16 @@ body {
   }
 }
 
-.header-primary {}
+.header-primary {
+  background-color: $gold;
+  @include pad(0 3%);
+  .title {
+    margin-top: 0;
+    a {
+      color: $white;
+    }
+  }
+}
 
 .nav-primary {}
 

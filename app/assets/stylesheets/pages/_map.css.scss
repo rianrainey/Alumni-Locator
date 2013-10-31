@@ -1,8 +1,9 @@
-.member-list {
+.search-wrapper,
+.member-list{
   @include pad(0 3%);
   @include span-columns(12);
-  @include media($tablet) {
-    @include span-columns(4);
+  @include media($desktop) {
+    @include pad(0);
   }
   .search {
     color: $black;
@@ -14,8 +15,12 @@
     @include omega();
   }
   .user-list {
+    font-size: 1.5em;
     @include span-columns(12);
   }
+}
+.search-wrapper {
+  margin-bottom: 2em;
 }
 .member-locations {
   display: block;
@@ -30,7 +35,7 @@
     border-color: #ccc #ccc #999 #ccc;
     margin: 0 auto;
     width: 600px;
-    @include media($tablet) {
+    @include media($desktop) {
       width: 900px;
     }
 

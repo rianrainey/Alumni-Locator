@@ -1,5 +1,4 @@
-<div class="member-list">
-
+<div class="search-wrapper">
   <%= form_tag users_path, :method => :get do %>
     <div class="search input-group">
       <span class="input-group-addon">Find Scholars Near:</span>
@@ -7,18 +6,25 @@
     </div>
     <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
   <% end %>
+</div>
 
-  <div class="user-list">
-    <% @users.each do |user| %>
-      <% if user.contact_info.present? %>
-        <ul>
-          <li>
-            <%= user.contact_info.first_name + " " + user.contact_info.last_name unless user.contact_info.first_name.blank? %>
-          </li>
-        </ul>
+<div class="member-list">
+  <% if params[:search] && @users %>
+    <div class="user-list">
+      <h2>Scholars Found Near: "<%= params['search'] %>"</h2>
+      <% @users.each do |user| %>
+        <% if user.contact_info.present? %>
+          <ul>
+            <li>
+              <%= user.contact_info.first_name + " " + user.contact_info.last_name unless user.contact_info.first_name.blank? %>
+            </li>
+          </ul>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% elsif params[:search] && @users.blank? %>
+    <h2>Sorry, there were no scholars found near: "<%= params['search'] %>". Please try again.</h2>
+  <% end %>
 </div>
 
 <div class="member-locations">
