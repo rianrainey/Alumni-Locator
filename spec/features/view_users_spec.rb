@@ -48,3 +48,33 @@ describe 'Users Index' do
   end
 
 end
+
+describe 'Representations' do
+  before do
+    log_into_administration
+  end
+
+  it "is downloadable as a CSV" do
+    user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
+    visit admin_users_path
+    click_link 'CSV'
+    expect(status_code).to eq 200
+    expect(response_headers['Content-Type']).to match /text\/csv/
+    expect(page.body).to match /#{user1.email}/
+    expect(page.body).to match /#{user2.email}/
+  end
+end
+
+
+describe 'Import Scholars' do
+  before do
+    log_into_administration
+  end
+
+  it "allows for importing of scholars" do
+    visit admin_users_path
+    click_link 'Import Scholars'
+    expect(page).to have_content "Upload Scholars"
+  end
+end

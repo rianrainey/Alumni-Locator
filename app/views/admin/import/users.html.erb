@@ -1,0 +1,4 @@
+<%= form_tag({action: :import_scholars}, multipart: true) do %>
+  <%= file_field_tag 'spreadsheet' %>
+  <%= submit_tag("Upload") %>
+<% end %>

@@ -1,4 +1,5 @@
-ActiveAdmin.register ContactInfo do     
+ActiveAdmin.register ContactInfo do
+  menu false
   index do
     column :user_id
     column :first_name

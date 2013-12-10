@@ -20,8 +20,6 @@ class ContactInfo < ActiveRecord::Base
                   :longitude
   belongs_to :user
   
-  validates_presence_of :user_id
-
   geocoded_by :gmaps4rails_address
   after_validation :geocode, if: :home_address_changed?
   acts_as_gmappable process_geocoding: false

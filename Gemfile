@@ -8,6 +8,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'chosen-rails'
 gem 'rails_config'
+gem 'roo' 
 
 gem 'geocoder'
 gem 'gmaps4rails'

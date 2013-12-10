@@ -13,4 +13,12 @@ module AuthHelper
       raise "I don't know how to log in!"
     end
   end  
+
+  def log_into_administration
+    user ||= FactoryGirl.create :admin_user
+    visit admin_root_path
+    fill_in 'Email', :with => user.email
+    fill_in 'Password', :with => user.password
+    click_button 'Login'
+  end
 end
